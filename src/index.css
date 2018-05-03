@@ -14,10 +14,3 @@ div#report-data  h3 {
     margin-left: 20px;
     width: 100%;
 }
-
-div#report-data{
-    float: left;
-    width: calc(100% - 400px);
-    background: #EEEEEF;
-    padding-bottom: 1rem;
-}

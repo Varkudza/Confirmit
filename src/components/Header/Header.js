@@ -34,12 +34,14 @@ class Header extends Component {
         $('a').removeClass("tab-link-selected");
         $('#home-tab').addClass("tab-link-selected");
         $('.small-info-block').show();
+        $('.small-info-block').show();
     };
 
     headlinesTabClick = () => {
         console.log();
         $('a').removeClass("tab-link-selected");
         $('#headlines-tab').addClass("tab-link-selected");
+        $('.small-info-block').hide();
         $('.small-info-block').hide();
     };
 }

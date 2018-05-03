@@ -6,10 +6,12 @@ import $ from '../../../node_modules/jquery/dist/jquery';
 class BigInfoBlock extends Component {
     render() {
         return (
-            <div className="big-info-block-container">
+            <div className="big-info-block-container-new">
                 <div className="big-info-block ">
                     <h5>Team Perfomance</h5>
-                    <p>NPS Value</p>
+                    <table>
+                        <tr>11</tr>
+                    </table>
                 </div>
             </div>
         )

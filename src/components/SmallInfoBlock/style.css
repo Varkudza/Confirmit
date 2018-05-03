@@ -1,15 +1,11 @@
-.small-info-blocks-container{
-    float:left;
-    display: block;
-    width: 49%;
-    /*padding-left: 1rem;*/
-
+.small-info-blocks-container-new{
+    float:none;
+    width: 100%;
 }
 
 .small-info-block{
     margin-top: 1rem;
-    margin-left: 1rem;
-    width:47%;
+    /*width:47%;*/
     height: 200px;
     border: solid 1px #DBDBDC;
     float: left;

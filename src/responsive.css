@@ -1,86 +1,258 @@
-@media (min-width: 320px) {
+@media screen and (min-width: 1240px)  {
 
-    .small-info-blocks-container,
     .big-info-block-container{
-        float: top;
-        width: 100%;
+        float: left;
+        width: 49%;
+        margin-left: 1rem;
     }
 
-    .filter-container{
-        float: top;
+    .small-info-blocks-container{
+        float:left;
+        display: block;
+        width: 49%;
+        /*padding-left: 1rem;*/
+
     }
+    .small-info-block{
+        width: 47%;
+        margin-left: 1rem;
+    }
+
+    .filter-container {
+        width: 400px;
+        border: solid 1px #ECECED;
+        border-bottom: transparent;
+        float: left
+    }
+
+    div#report-data{
+        float: left;
+        width: calc(100% - 400px);
+        background: #EEEEEF;
+        padding-bottom: 1rem;
+    }
+
+    .filter-bar-container{
+        float:left;
+        width: calc(100% - 400px);
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
+    }
+
 }
 
-@media (min-width: 768px) {
 
-    .small-info-block,
-    .big-info-block{
+@media screen and (min-width: 1024px) and (max-width: 1240px)  {
+    .small-info-blocks-container
+    {
+        float: none;
+        width: 100%;
         display: inline-block;
-        float: top;
     }
 
-    .small-info-blocks-container,
-    .big-info-block-container{
-        float: top;
+    .big-info-block-container
+    {
+        float: none;
         width: 100%;
-    }
-
-    .filter-container{
-        float: top;
-    }
-
-}
-
-@media (min-width: 992px) {
-
-    .small-info-block,
-    .big-info-block{
         display: inline-block;
-        float: top;
+        margin-left: 1rem;
     }
 
-    .small-info-blocks-container,
-    .big-info-block-container{
-        float: top;
-        width: 100%;
+
+
+    .small-info-block{
+        width: 47%;
+        margin-left: 1rem;
     }
 
-    .filter-container{
-        float: top;
+    .filter-container {
+        width: 400px;
+        border: solid 1px #ECECED;
+        border-bottom: transparent;
+        float: left
+    }
+
+    div#report-data{
+        float: left;
+        width: calc(100% - 400px);
+        background: #EEEEEF;
+        padding-bottom: 1rem;
+    }
+
+    .filter-bar-container{
+        float:left;
+        width: calc(100% - 400px);
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
     }
 
 }
 
-@media (min-width: 1025px) {
-
-    .small-info-block,
-    .big-info-block{
+@media screen and (min-width: 768px) and (max-width: 1024px)  {
+    .small-info-blocks-container
+    {
+        float: none;
+        width: 100%;
         display: inline-block;
-        float: top;
     }
 
+    .big-info-block-container
+    {
+        float: none;
+        width: 100%;
+        display: inline-block;
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+
+    .small-info-block{
+        width: 47%;
+        margin-left: 1rem;
+    }
+
+    .filter-container {
+        width: 400px;
+        border: solid 1px #ECECED;
+        border-bottom: transparent;
+        float: left
+    }
+
+    div#report-data{
+        float: left;
+        width: calc(100% - 400px);
+        background: #EEEEEF;
+        padding-bottom: 1rem;
+    }
+
+    .filter-bar-container{
+        float:left;
+        width: calc(100% - 400px);
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+    .small-info-blocks-container
+    {
+        float: none;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .big-info-block-container
+    {
+        float: none;
+        width: 100%;
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+    .small-info-block{
+        width: 100%;
+        margin-left: 1rem;
+    }
+
+    .filter-container {
+        width: 400px;
+        border: solid 1px #ECECED;
+        border-bottom: transparent;
+        float: left
+    }
+
+    div#report-data{
+        float: left;
+        width: calc(100% - 400px);
+        background: #EEEEEF;
+        padding-bottom: 1rem;
+    }
+
+    .filter-bar-container{
+        float:left;
+        width: calc(100% - 400px);
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
+    }
+
+}
+
+@media screen and (min-width: 568px) and (max-width: 768px) {
+    .small-info-blocks-container
+    {
+        float: none;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .big-info-block-container
+    {
+        float: none;
+        width: 100%;
+        display: inline-block;
+        margin-left: 1rem;
+    }
+    .small-info-block{
+        width: 100%;
+        margin-left: 1rem;
+    }
+    .filter-container {
+        width: 400px;
+        border: solid 1px #ECECED;
+        border-bottom: transparent;
+        float: left
+    }
+
+    div#report-data{
+        float: left;
+        width: calc(100% - 400px);
+        background: #EEEEEF;
+        padding-bottom: 1rem;
+    }
+
+    .filter-bar-container{
+        float:left;
+        width: calc(100% - 400px);
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
+    }
+
+}
+
+
+@media screen and (min-width : 320px) and (max-width : 568px) {
+    .big-info-block-container,
     .small-info-blocks-container,
-    .big-info-block-container{
-        float: top;
+    .filter-container
+    {
+        float: none;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .small-info-block{
+        margin-left: 0;
         width: 100%;
     }
 
-    .filter-container{
-        float: top;
-    }
-
-
-}
-
-@media (min-width: 1200px) {
-
-}
-
-
-@media (min-width: 1510px) {
-
-    .big-info-block-container{
-        float: top;
+    div#report-data{
+        float: none;
         width: 100%;
+        background: #EEEEEF;
+        padding-bottom: 1rem;
     }
+
+    .filter-bar-container{
+        float:none;
+        width: 100%;
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
+    }
+
 }
