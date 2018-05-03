@@ -1,0 +1,30 @@
+.small-info-blocks-container{
+    float:left;
+    display: block;
+    width: 49%;
+    /*padding-left: 1rem;*/
+
+}
+
+.small-info-block{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width:47%;
+    height: 200px;
+    border: solid 1px #DBDBDC;
+    float: left;
+    background: white;
+}
+
+.small-info-block h5, .big-info-block h5 {
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.small-info-block > p{
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+    font-size: 2em;
+    font-weight: bold;
+}

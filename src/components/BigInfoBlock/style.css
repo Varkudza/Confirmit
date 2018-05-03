@@ -1,0 +1,12 @@
+.big-info-block-container{
+    float: left;
+    width: 49%;
+}
+
+.big-info-block{
+    margin-top: 1rem;
+    height: 416px;
+    border: solid 1px #DBDBDC;
+    background: white;
+    width: 100%;
+}

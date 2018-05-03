@@ -1,0 +1,86 @@
+@media (min-width: 320px) {
+
+    .small-info-blocks-container,
+    .big-info-block-container{
+        float: top;
+        width: 100%;
+    }
+
+    .filter-container{
+        float: top;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .small-info-block,
+    .big-info-block{
+        display: inline-block;
+        float: top;
+    }
+
+    .small-info-blocks-container,
+    .big-info-block-container{
+        float: top;
+        width: 100%;
+    }
+
+    .filter-container{
+        float: top;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .small-info-block,
+    .big-info-block{
+        display: inline-block;
+        float: top;
+    }
+
+    .small-info-blocks-container,
+    .big-info-block-container{
+        float: top;
+        width: 100%;
+    }
+
+    .filter-container{
+        float: top;
+    }
+
+}
+
+@media (min-width: 1025px) {
+
+    .small-info-block,
+    .big-info-block{
+        display: inline-block;
+        float: top;
+    }
+
+    .small-info-blocks-container,
+    .big-info-block-container{
+        float: top;
+        width: 100%;
+    }
+
+    .filter-container{
+        float: top;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+
+@media (min-width: 1510px) {
+
+    .big-info-block-container{
+        float: top;
+        width: 100%;
+    }
+}

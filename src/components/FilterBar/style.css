@@ -1,0 +1,14 @@
+.filter-bar-container{
+    float:left;
+    width: calc(100% - 400px);
+    background: #F0F2F5;
+    height: 42px;
+    vertical-align: middle;
+}
+
+.filter-bar-container > img {
+    height: 20px;
+    margin-left: 1rem;
+    margin-top: 12px;
+    cursor: pointer;
+}
