@@ -155,60 +155,202 @@ class Filter extends Component {
         console.log("doIt");
         //Detractor (nps=0-6), Passive (nps=7-8), Promoter (nps=9-10)
         var jsonArr = this.selectedOpt.reportData.slice();
+        //titles variables
         var nps = 0;
         var easy = 0;
         var overSat = 0;
         var likeToRen = 0;
-        var arrLength = jsonArr.length;
 
-        var npsSel = 0;
-        var easySel = 0;
-        var overSatSel = 0;
-        var likeToRenSel = 0;
+        var productGroup = this.selectedOpt.productGroup;
+        var isDetractor = this.selectedOpt.detractor;
+        var isPassive = this.selectedOpt.passive;
+        var isPromoter = this.selectedOpt.promoter;
 
-        var selectedRows = 0;
+        //table variables
+        var Global = {osat: 0, rsp: 0, prd: 0, count: 0},
+            EMEA = {osat: 0, rsp: 0, prd: 0, count: 0},
+            Canada = {osat: 0, rsp: 0, prd: 0, count: 0},
+            US = {osat: 0, rsp: 0, prd: 0, count: 0},
+            APAC = {osat: 0, rsp: 0, prd: 0, count: 0},
+            SAM = {osat: 0, rsp: 0, prd: 0, count: 0};
 
 
-        for (var i = 0; i < arrLength; i++) {
-            var obj = jsonArr[i];
+
+        var newArray = jsonArr.slice();
+
+        if(productGroup !== ""){
+            newArray = newArray.filter(function (el) {
+                return el.prd_group === productGroup
+            });
+        }
+        if(isDetractor === true || isPassive === true || isPromoter === true){
+            newArray = newArray.filter(function (el) {
+                let npsVal = Number(el.nps);
+                return (isDetractor === true ? (npsVal >= 0 && npsVal <= 6) : false) ||
+                    (isPassive === true ? (npsVal >= 7 && npsVal <= 8) : false) ||
+                    (isPromoter === true ? (npsVal >= 9 && npsVal <= 10) : false);
+            });
+        }
+
+        var selectedRows = newArray.length;
+
+        for (var i = 0; i < selectedRows; i++) {
+            var obj = newArray[i];
             var npsVal = Number(obj.nps);
 
-
+            //titles general average
             nps += npsVal;
             easy += Number(obj.easy);
             overSat += Number(obj.osat);
             likeToRen += Number(obj.ltr);
 
-            console.log("this.selectedOpt.productGroup = " + this.selectedOpt.productGroup + "\nobj.prd_group = " + obj.prd_group);
+            //table average
 
-            var isComboSelected = ((this.selectedOpt.detractor === true && (npsVal >= 0 && npsVal <= 6)) ||
-                (this.selectedOpt.passive === true && (npsVal >= 7 && npsVal <= 8)) ||
-                (this.selectedOpt.promoter === true && (npsVal >= 9 && npsVal <= 10)));
+            // Global
+            // EMEA
+            // Canada
+            // United States
+            // APAC
+            // S. America
 
-            if (this.selectedOpt.productGroup === obj.prd_group && isComboSelected === true) {
-                npsSel += npsVal;
-                easySel += Number(obj.easy);
-                overSatSel += Number(obj.osat);
-                likeToRenSel += Number(obj.ltr);
-                selectedRows++;
+
+            //Overall
+            //Responsiveness
+            //Product Knowledge
+
+            switch (obj.hier){
+                case "Global" :
+                    Global.osat += obj.osat;
+                    Global.rsp += obj.osat;
+                    Global.prd += obj.prd;
+                    Global.count++;
+                    break;
+
+                case "EMEA" :
+                    EMEA.osat += obj.osat;
+                    EMEA.rsp += obj.osat;
+                    EMEA.prd += obj.prd;
+                    EMEA.count++;
+                    break;
+
+                case "Canada" :
+                    Canada.osat += obj.osat;
+                    Canada.rsp += obj.osat;
+                    Canada.prd += obj.prd;
+                    Canada.count++;
+                    break;
+
+                case "United States" :
+                    US.osat += obj.osat;
+                    US.rsp += obj.osat;
+                    US.prd += obj.prd;
+                    US.count++;
+                    break;
+
+                case "APAC" :
+                    APAC.osat += obj.osat;
+                    APAC.rsp += obj.osat;
+                    APAC.prd += obj.prd;
+                    APAC.count++;
+                    break;
+
+                case "S. America" :
+                    SAM.osat += obj.osat;
+                    SAM.rsp += obj.osat;
+                    SAM.prd += obj.prd;
+                    SAM.count++;
+                    break;
             }
 
         }
         console.log("selectedRows " + selectedRows);
-        if (selectedRows > 0) {
-            $('div#nps p').text(npsSel / selectedRows);
-            $('div#easy p').text(easySel / selectedRows + "%");
-            console.log("easy / arrLength = " + easy / arrLength);
+        console.log("Global.count " + Global.count);
+        console.log("EMEA.count " + EMEA.count);
+        console.log("Canada.count " + Canada.count);
+        console.log("US.count " + US.count);
+        console.log("APAC.count " + APAC.count);
+        console.log("SAM.count " + SAM.count);
 
-            $('div#overSat p').text(overSatSel / selectedRows + "%");
-            $('div#likeToRen p').text(likeToRenSel / selectedRows + "%");
-        } else if (this.selectedOpt.detractor === false && this.selectedOpt.passive === false && this.selectedOpt.promoter === false) {
-            $('div#nps p').text(nps / arrLength);
-            $('div#easy p').text(easy / arrLength + "%");
-            $('div#overSat p').text(overSat / arrLength + "%");
-            $('div#likeToRen p').text(likeToRen / arrLength + "%");
+        //TODO не совсем понял отчего именно считать процент для easy, overSat и likeToRen, поэтому оставил просто среднее арифметическое
+        if (selectedRows > 0) {
+            $('div#nps p').text((nps / selectedRows).toFixed(2));
+            $('div#easy p').text((easy / selectedRows).toFixed(2) + "%");
+            $('div#overSat p').text((overSat / selectedRows).toFixed(2) + "%");
+            $('div#likeToRen p').text((likeToRen / selectedRows).toFixed(2) + "%");
+        } else  {
+            $('div#nps p').text(0);
+            $('div#easy p').text("0%");
+            $('div#overSat p').text("0%");
+            $('div#likeToRen p').text("0%");
         }
 
+
+        //TODO вынести в один метод, а то некрасиво как-то
+        if(Global.count > 0){
+            $('tr#global span.osat').text((Global.osat / Global.count).toFixed(1));
+            $('tr#global span.rsp').text((Global.rsp / Global.count).toFixed(1));
+            $('tr#global span.prd').text((Global.prd / Global.count).toFixed(1));
+        }
+        else{
+            $('tr#global span.osat').text(0);
+            $('tr#global span.rsp').text(0);
+            $('tr#global span.prd').text(0);
+        }
+
+        if(EMEA.count > 0){
+            $('tr#emea span.osat').text((EMEA.osat / EMEA.count).toFixed(1));
+            $('tr#emea span.rsp').text((EMEA.rsp / EMEA.count).toFixed(1));
+            $('tr#emea span.prd').text((EMEA.prd / EMEA.count).toFixed(1));
+        }
+        else{
+            $('tr#emea span.osat').text(0);
+            $('tr#emea span.rsp').text(0);
+            $('tr#emea span.prd').text(0);
+        }
+
+        if(Canada.count > 0){
+            $('tr#canada span.osat').text((Canada.osat / Canada.count).toFixed(1));
+            $('tr#canada span.rsp').text((Canada.rsp / Canada.count).toFixed(1));
+            $('tr#canada span.prd').text((Canada.prd / Canada.count).toFixed(1));
+        }
+        else{
+            $('tr#emea span.osat').text(0);
+            $('tr#emea span.rsp').text(0);
+            $('tr#emea span.prd').text(0);
+        }
+
+        if(US.count > 0){
+            $('tr#us span.osat').text((US.osat / US.count).toFixed(1));
+            $('tr#us span.rsp').text((US.rsp / US.count).toFixed(1));
+            $('tr#us span.prd').text((US.prd / US.count).toFixed(1));
+        }
+        else{
+            $('tr#us span.osat').text(0);
+            $('tr#us span.rsp').text(0);
+            $('tr#us span.prd').text(0);
+        }
+
+        if(APAC.count > 0){
+            $('tr#apac span.osat').text((APAC.osat / APAC.count).toFixed(1));
+            $('tr#apac span.rsp').text((APAC.rsp / APAC.count).toFixed(1));
+            $('tr#apac span.prd').text((APAC.prd / APAC.count).toFixed(1));
+        }
+        else{
+            $('tr#apac span.osat').text(0);
+            $('tr#apac span.rsp').text(0);
+            $('tr#apac span.prd').text(0);
+        }
+
+        if(SAM.count > 0){
+            $('tr#sam span.osat').text((SAM.osat / SAM.count).toFixed(1));
+            $('tr#sam span.rsp').text((SAM.rsp / SAM.count).toFixed(1));
+            $('tr#sam span.prd').text((SAM.prd / SAM.count).toFixed(1));
+        }
+        else{
+            $('tr#sam span.osat').text(0);
+            $('tr#sam span.rsp').text(0);
+            $('tr#sam span.prd').text(0);
+        }
     };
 
     // $("#myRadio").prop("checked");

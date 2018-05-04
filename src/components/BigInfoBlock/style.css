@@ -29,7 +29,7 @@
     font-size: 15px;
 }
 
-.big-info-block td{
+.big-info-block td, .big-info-block th{
     width: 150px;
 }
 

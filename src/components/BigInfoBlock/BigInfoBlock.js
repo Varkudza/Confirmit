@@ -2,57 +2,89 @@ import React, {Component} from 'react';
 import './/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import $ from '../../../node_modules/jquery/dist/jquery';
+import '../../../node_modules/tablesorter/dist/js/jquery.tablesorter'
 
 class BigInfoBlock extends Component {
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount(){
+        $("#report-table").tablesorter();
+
+        //If this value >= 7.0 make it green, if <5 make it red, in all other cases – gray
+        $('span.osat, span.rsp, span.prd').on('DOMSubtreeModified', function () {
+            var obj = $(this);
+            var value = obj.text();
+            if(Number(value) >= 7){
+                obj.css('background', '#42BD41');
+                obj.css('color', 'white');
+            }
+            else if(Number(value) < 5){
+                obj.css('background', 'red');
+                obj.css('color', 'white');
+            }
+            else if((Number(value) >= 5 && Number(value) < 7)) {
+                obj.css('background', 'lightgrey');
+                obj.css('color', 'black');
+            }
+            console.log('onchange ' + value);
+        })
+
+
+    }
     render() {
         return (
             <div className="big-info-block-container-new">
                 <div className="big-info-block">
                     <h5>Team Perfomance</h5>
                     <div className="big-info-table-container">
-                        <table>
+                        <table id="report-table">
+                            <thead>
                             <tr>
-                                <td>--</td>
+                                <th>--</th>
                                 <td>Overall</td>
                                 <td>Responsiveness</td>
                                 <td>Product Knowledge</td>
                             </tr>
+                            </thead>
+                            <tbody>
                             <tr id="global">
-                                <td>Global</td>
-                                <td><span className="osat">6.3</span></td>
-                                <td><span className="rsp">3.8</span></td>
-                                <td><span className="prd">6.4</span></td>
+                                <th>Global</th>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="emea">
-                                <td>EMEA</td>
-                                <td><span className="osat">6.3</span></td>
-                                <td><span className="rsp">3.8</span></td>
-                                <td><span className="prd">6.4</span></td>
+                                <th>EMEA</th>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="canada">
-                                <td>Canada</td>
-                                <td><span className="osat">6.3</span></td>
-                                <td><span className="rsp">3.8</span></td>
-                                <td><span className="prd">6.4</span></td>
+                                <th>Canada</th>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="us">
-                                <td>United States</td>
-                                <td><span className="osat">6.3</span></td>
-                                <td><span className="rsp">3.8</span></td>
-                                <td><span className="prd">6.4</span></td>
+                                <th>United States</th>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="apac">
-                                <td>APAC</td>
-                                <td><span className="osat">6.3</span></td>
-                                <td><span className="rsp">3.8</span></td>
-                                <td><span className="prd">6.4</span></td>
+                                <th>APAC</th>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="sam">
-                                <td>S. America</td>
-                                <td><span className="osat">6.3</span></td>
-                                <td><span className="rsp">3.8</span></td>
-                                <td><span className="prd">6.4</span></td>
+                                <th>S. America</th>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -60,6 +92,5 @@ class BigInfoBlock extends Component {
         )
     }
 }
-
 
 export default BigInfoBlock;
