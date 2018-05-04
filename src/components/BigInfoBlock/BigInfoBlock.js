@@ -9,23 +9,23 @@ class BigInfoBlock extends Component {
         super(props);
     }
     componentDidMount(){
-        $("#report-table").tablesorter();
+        $("#report-table").tablesorter({debug: true});
 
         //If this value >= 7.0 make it green, if <5 make it red, in all other cases – gray
         $('span.osat, span.rsp, span.prd').on('DOMSubtreeModified', function () {
             var obj = $(this);
             var value = obj.text();
             if(Number(value) >= 7){
-                obj.css('background', '#42BD41');
-                obj.css('color', 'white');
+                obj.removeClass('lowCell', 'normalCell');
+                obj.addClass('highCell');
             }
             else if(Number(value) < 5){
-                obj.css('background', 'red');
-                obj.css('color', 'white');
+                obj.removeClass('highCell', 'normalCell');
+                obj.addClass('lowCell');
             }
             else if((Number(value) >= 5 && Number(value) < 7)) {
-                obj.css('background', 'lightgrey');
-                obj.css('color', 'black');
+                obj.removeClass('lowCell', 'highCell');
+                obj.addClass('normalCell');
             }
         })
 
@@ -49,39 +49,39 @@ class BigInfoBlock extends Component {
                             <tbody>
                             <tr id="global">
                                 <th>Global</th>
-                                <td><span className="osat">0.0</span></td>
-                                <td><span className="rsp">0.0</span></td>
-                                <td><span className="prd">0.0</span></td>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="emea">
                                 <th>EMEA</th>
-                                <td><span className="osat">0.0</span></td>
-                                <td><span className="rsp">0.0</span></td>
-                                <td><span className="prd">0.0</span></td>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="canada">
                                 <th>Canada</th>
-                                <td><span className="osat">0.0</span></td>
-                                <td><span className="rsp">0.0</span></td>
-                                <td><span className="prd">0.0</span></td>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="us">
                                 <th>United States</th>
-                                <td><span className="osat">0.0</span></td>
-                                <td><span className="rsp">0.0</span></td>
-                                <td><span className="prd">0.0</span></td>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="apac">
                                 <th>APAC</th>
-                                <td><span className="osat">0.0</span></td>
-                                <td><span className="rsp">0.0</span></td>
-                                <td><span className="prd">0.0</span></td>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="sam">
                                 <th>S. America</th>
-                                <td><span className="osat">0.0</span></td>
-                                <td><span className="rsp">0.0</span></td>
-                                <td><span className="prd">0.0</span></td>
+                                <td><span className="osat">0</span></td>
+                                <td><span className="rsp">0</span></td>
+                                <td><span className="prd">0</span></td>
                             </tr>
                             </tbody>
                         </table>

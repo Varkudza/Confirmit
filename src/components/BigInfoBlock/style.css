@@ -50,3 +50,19 @@
     padding-left: 3px;
     padding-right: 3px;
 }
+
+
+.lowCell{
+    background: red;
+    color :white;
+}
+
+.normalCell{
+    background: lightgrey;
+    color :black;
+}
+
+.highCell{
+    background: #42BD41;
+    color: white;
+}
