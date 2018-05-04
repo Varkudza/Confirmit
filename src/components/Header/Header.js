@@ -34,7 +34,7 @@ class Header extends Component {
         $('a').removeClass("tab-link-selected");
         $('#home-tab').addClass("tab-link-selected");
         $('.small-info-block').show();
-        $('.small-info-block').show();
+        $('.big-info-block-container').show();
     };
 
     headlinesTabClick = () => {
@@ -42,7 +42,7 @@ class Header extends Component {
         $('a').removeClass("tab-link-selected");
         $('#headlines-tab').addClass("tab-link-selected");
         $('.small-info-block').hide();
-        $('.small-info-block').hide();
+        $('.big-info-block-container').hide();
     };
 }
 
