@@ -27,7 +27,6 @@ class BigInfoBlock extends Component {
                 obj.css('background', 'lightgrey');
                 obj.css('color', 'black');
             }
-            console.log('onchange ' + value);
         })
 
 
@@ -50,39 +49,39 @@ class BigInfoBlock extends Component {
                             <tbody>
                             <tr id="global">
                                 <th>Global</th>
-                                <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="osat">0.0</span></td>
+                                <td><span className="rsp">0.0</span></td>
+                                <td><span className="prd">0.0</span></td>
                             </tr>
                             <tr id="emea">
                                 <th>EMEA</th>
-                                <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="osat">0.0</span></td>
+                                <td><span className="rsp">0.0</span></td>
+                                <td><span className="prd">0.0</span></td>
                             </tr>
                             <tr id="canada">
                                 <th>Canada</th>
-                                <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="osat">0.0</span></td>
+                                <td><span className="rsp">0.0</span></td>
+                                <td><span className="prd">0.0</span></td>
                             </tr>
                             <tr id="us">
                                 <th>United States</th>
-                                <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="osat">0.0</span></td>
+                                <td><span className="rsp">0.0</span></td>
+                                <td><span className="prd">0.0</span></td>
                             </tr>
                             <tr id="apac">
                                 <th>APAC</th>
-                                <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="osat">0.0</span></td>
+                                <td><span className="rsp">0.0</span></td>
+                                <td><span className="prd">0.0</span></td>
                             </tr>
                             <tr id="sam">
                                 <th>S. America</th>
-                                <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="osat">0.0</span></td>
+                                <td><span className="rsp">0.0</span></td>
+                                <td><span className="prd">0.0</span></td>
                             </tr>
                             </tbody>
                         </table>

@@ -12,6 +12,11 @@ class FilterBar extends Component {
             isOpened: true
         }
     };
+
+    componentDidMount(){
+
+    }
+
     render() {
         return (
             <div className="filter-bar-container">

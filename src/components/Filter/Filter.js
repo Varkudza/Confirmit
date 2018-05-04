@@ -284,74 +284,26 @@ class Filter extends Component {
             $('div#likeToRen p').text("0%");
         }
 
-
-        //TODO вынести в один метод, а то некрасиво как-то
-        if(Global.count > 0){
-            $('tr#global span.osat').text((Global.osat / Global.count).toFixed(1));
-            $('tr#global span.rsp').text((Global.rsp / Global.count).toFixed(1));
-            $('tr#global span.prd').text((Global.prd / Global.count).toFixed(1));
-        }
-        else{
-            $('tr#global span.osat').text(0);
-            $('tr#global span.rsp').text(0);
-            $('tr#global span.prd').text(0);
-        }
-
-        if(EMEA.count > 0){
-            $('tr#emea span.osat').text((EMEA.osat / EMEA.count).toFixed(1));
-            $('tr#emea span.rsp').text((EMEA.rsp / EMEA.count).toFixed(1));
-            $('tr#emea span.prd').text((EMEA.prd / EMEA.count).toFixed(1));
-        }
-        else{
-            $('tr#emea span.osat').text(0);
-            $('tr#emea span.rsp').text(0);
-            $('tr#emea span.prd').text(0);
-        }
-
-        if(Canada.count > 0){
-            $('tr#canada span.osat').text((Canada.osat / Canada.count).toFixed(1));
-            $('tr#canada span.rsp').text((Canada.rsp / Canada.count).toFixed(1));
-            $('tr#canada span.prd').text((Canada.prd / Canada.count).toFixed(1));
-        }
-        else{
-            $('tr#emea span.osat').text(0);
-            $('tr#emea span.rsp').text(0);
-            $('tr#emea span.prd').text(0);
-        }
-
-        if(US.count > 0){
-            $('tr#us span.osat').text((US.osat / US.count).toFixed(1));
-            $('tr#us span.rsp').text((US.rsp / US.count).toFixed(1));
-            $('tr#us span.prd').text((US.prd / US.count).toFixed(1));
-        }
-        else{
-            $('tr#us span.osat').text(0);
-            $('tr#us span.rsp').text(0);
-            $('tr#us span.prd').text(0);
-        }
-
-        if(APAC.count > 0){
-            $('tr#apac span.osat').text((APAC.osat / APAC.count).toFixed(1));
-            $('tr#apac span.rsp').text((APAC.rsp / APAC.count).toFixed(1));
-            $('tr#apac span.prd').text((APAC.prd / APAC.count).toFixed(1));
-        }
-        else{
-            $('tr#apac span.osat').text(0);
-            $('tr#apac span.rsp').text(0);
-            $('tr#apac span.prd').text(0);
-        }
-
-        if(SAM.count > 0){
-            $('tr#sam span.osat').text((SAM.osat / SAM.count).toFixed(1));
-            $('tr#sam span.rsp').text((SAM.rsp / SAM.count).toFixed(1));
-            $('tr#sam span.prd').text((SAM.prd / SAM.count).toFixed(1));
-        }
-        else{
-            $('tr#sam span.osat').text(0);
-            $('tr#sam span.rsp').text(0);
-            $('tr#sam span.prd').text(0);
-        }
+        this.setTableValues(Global, 'global');
+        this.setTableValues(EMEA, 'emea');
+        this.setTableValues(Canada, 'canada');
+        this.setTableValues(US, 'us');
+        this.setTableValues(APAC, 'apac');
+        this.setTableValues(SAM, 'sam');
     };
+
+    setTableValues = (obj, id) => {
+        if(obj.count > 0){
+            $('tr#'+id+' span.osat').text((obj.osat / obj.count).toFixed(1));
+            $('tr#'+id+' span.rsp').text((obj.rsp / obj.count).toFixed(1));
+            $('tr#'+id+' span.prd').text((obj.prd / obj.count).toFixed(1));
+        }
+        else{
+            $('tr#'+id+' span.osat').text(0.0);
+            $('tr#'+id+' span.rsp').text(0.0);
+            $('tr#'+id+' span.prd').text(0.0);
+        }
+    }
 
     // $("#myRadio").prop("checked");
 }
