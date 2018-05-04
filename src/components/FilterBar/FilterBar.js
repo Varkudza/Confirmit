@@ -14,9 +14,9 @@ class FilterBar extends Component {
     };
     render() {
         return (
-            <span className="filter-bar-container">
+            <div className="filter-bar-container">
                 <img src={filterOpened} onClick={this.openCloseFilters}/>
-            </span>
+            </div>
         )
     }
 
@@ -25,17 +25,38 @@ class FilterBar extends Component {
 
         if(this.state.isOpened === false){
             $('.filter-container').hide();
-            // $('.filter-bar-container').width("100%");
-            // $('div#report-data').width("100%");
             $('.filter-bar-container > img').attr("src", filterOpen);
         }else{
             $('.filter-bar-container > img').attr("src", filterOpened);
-            // $('.filter-bar-container').width("calc(100% - 400px)");
-            // $('div#report-data').width("calc(100% - 400px)");
             $('.filter-container').show();
         }
+        setCorrectWidthStyle();
         console.log("---" + this.state.isOpened);
     }
 }
+
+//небольшой костыль
+function setCorrectWidthStyle() {
+    var isFilterShow = $('.filter-container').is(":visible");
+    // console.log("---" + isFilterShow);
+    console.log("-isFilterShow === true-" + isFilterShow === true);
+
+    if ($(window).width() <= '568') {
+        $('.filter-bar-container').width("100%");
+        $('div#report-data').width("100%");
+    } else {
+        if (isFilterShow === true) {
+            $('.filter-bar-container').width("calc(100% - 400px)");
+            $('div#report-data').width("calc(100% - 400px)");
+        }else {
+            $('.filter-bar-container').width("100%");
+            $('div#report-data').width("100%");
+        }
+    }
+}
+
+$(window).resize(function () {
+    setCorrectWidthStyle();
+});
 
 export default FilterBar;

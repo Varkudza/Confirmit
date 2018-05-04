@@ -10,3 +10,43 @@
     background: white;
     width: 100%;
 }
+
+.big-info-table-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+/*решил не описывать новые классы, а поиграть с CSS*/
+
+
+.big-info-block table {
+    /*margin: auto;*/
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.big-info-block td{
+    width: 150px;
+}
+
+.big-info-block tr > td:first-child{
+    text-align: left;
+    align-content: center;
+}
+
+.big-info-block h5 {
+    display: inline-block;
+    float: top;
+}
+
+.osat, .rsp, .prd{
+    width: 30px;
+    height: 24px;
+    background: lightgrey;
+    padding-left: 3px;
+    padding-right: 3px;
+}

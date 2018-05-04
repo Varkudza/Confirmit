@@ -5,7 +5,9 @@ body {
 }
 
 .report-body {
-    position: center;
+    /*position: absolute;*/
+    /*background: #EEEEEF;*/
+    /*width: 100%;*/
 }
 
 div#report-data  h3 {

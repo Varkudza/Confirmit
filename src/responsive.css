@@ -1,9 +1,11 @@
-@media screen and (min-width: 1240px)  {
+@media screen and (min-width: 1510px)  {
 
     .big-info-block-container{
         float: left;
         width: 49%;
         margin-left: 1rem;
+        padding-right: 1rem;
+
     }
 
     .small-info-blocks-container{
@@ -43,12 +45,62 @@
 }
 
 
+
+@media screen and (min-width: 1240px) and (max-width: 1510px) {
+
+    .big-info-block-container{
+        float: left;
+        width: 49%;
+        margin-left: 1rem;
+        padding-right: 1rem;
+
+    }
+
+    .small-info-blocks-container{
+        float:left;
+        display: block;
+        width: 49%;
+        /*padding-left: 1rem;*/
+
+    }
+    .small-info-block{
+        width: 46%;
+        margin-left: 1rem;
+    }
+
+    .filter-container {
+        width: 400px;
+        border: solid 1px #ECECED;
+        border-bottom: transparent;
+        float: left
+    }
+
+    div#report-data{
+        float: left;
+        width: calc(100% - 400px);
+        background: #EEEEEF;
+        padding-bottom: 1rem;
+    }
+
+    .filter-bar-container{
+        float:left;
+        width: calc(100% - 400px);
+        background: #F0F2F5;
+        height: 42px;
+        vertical-align: middle;
+    }
+
+}
+
+
 @media screen and (min-width: 1024px) and (max-width: 1240px)  {
     .small-info-blocks-container
     {
         float: none;
         width: 100%;
         display: inline-block;
+        padding-right: 1rem;
+
     }
 
     .big-info-block-container
@@ -56,7 +108,9 @@
         float: none;
         width: 100%;
         display: inline-block;
-        margin-left: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
     }
 
 
@@ -96,6 +150,7 @@
         float: none;
         width: 100%;
         display: inline-block;
+        padding-right: 0rem;
     }
 
     .big-info-block-container
@@ -105,10 +160,12 @@
         display: inline-block;
         margin-left: 0;
         padding-left: 1rem;
+        padding-right: 1rem;
+
     }
 
     .small-info-block{
-        width: 47%;
+        width: 46%;
         margin-left: 1rem;
     }
 
@@ -142,6 +199,7 @@
         float: none;
         width: 100%;
         display: inline-block;
+        padding-right: 2rem;
     }
 
     .big-info-block-container
@@ -149,7 +207,8 @@
         float: none;
         width: 100%;
         display: inline-block;
-        margin-left: 1rem;
+        padding-left: 0;
+
     }
 
     .small-info-block{
@@ -187,6 +246,7 @@
         float: none;
         width: 100%;
         display: inline-block;
+        padding-right: 2rem;
     }
 
     .big-info-block-container
@@ -233,6 +293,8 @@
         float: none;
         width: 100%;
         display: inline-block;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 
     .small-info-block{
