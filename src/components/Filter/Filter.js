@@ -285,6 +285,9 @@ class Filter extends Component {
         this.setTableValues(APAC, 'apac');
         this.setTableValues(SAM, 'sam');
 
+        $("#report-table").trigger('update');
+        $("#report-table").tablesorter({debug: true});
+
     };
 
     setTableValues = (obj, id) => {

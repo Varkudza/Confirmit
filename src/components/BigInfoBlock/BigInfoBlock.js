@@ -10,6 +10,7 @@ class BigInfoBlock extends Component {
     }
     componentDidMount(){
         $("#report-table").tablesorter({debug: true});
+        $("#report-table").trigger('update');
 
         //If this value >= 7.0 make it green, if <5 make it red, in all other cases – gray
         $('span.osat, span.rsp, span.prd').on('DOMSubtreeModified', function () {
@@ -49,27 +50,27 @@ class BigInfoBlock extends Component {
                             <tbody>
                             <tr id="global">
                                 <th>Global</th>
-                                <td><span className="osat">0</span></td>
+                                <td><span className="osat">1</span></td>
                                 <td><span className="rsp">0</span></td>
                                 <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="emea">
                                 <th>EMEA</th>
                                 <td><span className="osat">0</span></td>
-                                <td><span className="rsp">0</span></td>
+                                <td><span className="rsp">6</span></td>
                                 <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="canada">
                                 <th>Canada</th>
-                                <td><span className="osat">0</span></td>
+                                <td><span className="osat">3</span></td>
                                 <td><span className="rsp">0</span></td>
                                 <td><span className="prd">0</span></td>
                             </tr>
                             <tr id="us">
                                 <th>United States</th>
-                                <td><span className="osat">0</span></td>
+                                <td><span className="osat">6</span></td>
                                 <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="prd">6</span></td>
                             </tr>
                             <tr id="apac">
                                 <th>APAC</th>
@@ -81,7 +82,7 @@ class BigInfoBlock extends Component {
                                 <th>S. America</th>
                                 <td><span className="osat">0</span></td>
                                 <td><span className="rsp">0</span></td>
-                                <td><span className="prd">0</span></td>
+                                <td><span className="prd">10</span></td>
                             </tr>
                             </tbody>
                         </table>
