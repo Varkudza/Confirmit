@@ -265,16 +265,17 @@ class Filter extends Component {
         }
 
         //TODO не совсем понял отчего именно считать процент для easy, overSat и likeToRen, поэтому оставил просто среднее арифметическое
+        console.log('selectedRows = ' + selectedRows);
         if (selectedRows > 0) {
-            $('div#nps p').val((nps / selectedRows).toFixed(2));
-            $('div#easy p').val((easy / selectedRows).toFixed(2) + "%");
-            $('div#overSat p').val((overSat / selectedRows).toFixed(2) + "%");
-            $('div#likeToRen p').val((likeToRen / selectedRows).toFixed(2) + "%");
+            $('div#nps p').text((nps / selectedRows).toFixed(2));
+            $('div#easy p').text((easy / selectedRows).toFixed(2) + "%");
+            $('div#overSat p').text((overSat / selectedRows).toFixed(2) + "%");
+            $('div#likeToRen p').text((likeToRen / selectedRows).toFixed(2) + "%");
         } else  {
-            $('div#nps p').val(0);
-            $('div#easy p').val("0%");
-            $('div#overSat p').val("0%");
-            $('div#likeToRen p').val("0%");
+            $('div#nps p').text(0);
+            $('div#easy p').text("0%");
+            $('div#overSat p').text("0%");
+            $('div#likeToRen p').text("0%");
         }
 
         this.setTableValues(Global, 'global');
@@ -283,6 +284,7 @@ class Filter extends Component {
         this.setTableValues(US, 'us');
         this.setTableValues(APAC, 'apac');
         this.setTableValues(SAM, 'sam');
+
     };
 
     setTableValues = (obj, id) => {
