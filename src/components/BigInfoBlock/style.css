@@ -33,7 +33,7 @@
     width: 150px;
 }
 
-.big-info-block tr > td:first-child{
+.big-info-block tr > th:first-child{
     text-align: left;
     align-content: center;
 }
